@@ -1,15 +1,16 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import NewTransaction from "./pages/NewTransaction";
 import Summary from "./pages/Summary";
 import Budget from "./pages/Budget";
+import Charts from "./pages/Charts"; // ✅ IMPORTANTE
 
 export default function App() {
   const [screen, setScreen] = useState("login");
 
+  if (screen === "charts") return <Charts goTo={setScreen} />;
   if (screen === "dashboard") return <Dashboard goTo={setScreen} />;
   if (screen === "new") return <NewTransaction goTo={setScreen} />;
   if (screen === "summary") return <Summary goTo={setScreen} />;

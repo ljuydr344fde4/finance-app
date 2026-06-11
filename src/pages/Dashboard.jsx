@@ -26,7 +26,7 @@ export default function Dashboard({ goTo }) {
       <h1>R$ {total.toFixed(2)}</h1>
 
       <div style={cardRed}>
-        <p>Gasto no mês</p>
+        <p>Gastos</p>
         <h2>R$ {expense.toFixed(2)}</h2>
       </div>
 
@@ -37,6 +37,10 @@ export default function Dashboard({ goTo }) {
 
       <button style={primary} onClick={() => goTo("new")}>
         + Nova transação
+      </button>
+
+      <button style={secondary} onClick={() => goTo("charts")}>
+        Ver gráfico
       </button>
 
       <button style={secondary} onClick={() => goTo("summary")}>
